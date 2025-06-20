@@ -1,5 +1,6 @@
 package lt.techin;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,10 +36,16 @@ public class SignInPage extends BasePage{
     public void clickSignIn(){
         signIn.click();
     }
+
+    public void performSignIn(String username, String password){
+        signInNameInput(username);
+        signInPasswordInput(password);
+        clickSignIn();
+    }
+
     public boolean isSignInSuccessful(){
         try {
-            Thread.sleep(2000);
-            return driver.getCurrentUrl().contains("skaiciuotuvas");
+            return driver.findElements(By.xpath("//*[contains(text(), 'Logout')]")).size() > 0;
         } catch (Exception e) {
             return false;
         }
@@ -47,11 +54,5 @@ public class SignInPage extends BasePage{
     public boolean hasSignInError(){
         return driver.getCurrentUrl().contains("prisijungti");
     }
+}
 
-    public void performSignIn(String username, String password){
-        signInNameInput(username);
-        signInPasswordInput(password);
-        clickSignIn();
-    }
-}
-}
