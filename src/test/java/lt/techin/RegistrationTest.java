@@ -27,11 +27,11 @@ public class RegistrationTest extends BaseTest {
 
         RegistrationPage registrationPage = new RegistrationPage(driver);
 
-        registrationPage.userNameInput("Vardas1234!");
+        registrationPage.enterUserName("Vardas1234!");
 
-        registrationPage.passwordInput("Slaptazodis1230");
+        registrationPage.enterPassword("Slaptazodis1230");
 
-        registrationPage.passwordConfirmationInput("Slaptazodis1230");
+        registrationPage.enterPasswordConfirmation("Slaptazodis1230");
 
         registrationPage.clickCreateAccount();
 

@@ -62,7 +62,7 @@ public class SignInTest extends BaseTest{
     void signInEmptyUsername() {
         SignInPage signInPage = new SignInPage(driver);
 
-        signInPage.signInPasswordInput("Slaptazodis1230");
+        signInPage.enterSignInPassword("Slaptazodis1230");
         signInPage.clickSignIn();
 
         assertTrue(signInPage.hasSignInError(), "Should show error for empty username");
@@ -75,7 +75,7 @@ public class SignInTest extends BaseTest{
     void signInEmptyPassword() {
         SignInPage signInPage = new SignInPage(driver);
 
-        signInPage.signInNameInput("Vardas1");
+        signInPage.enterSignInName("Vardas1");
         signInPage.clickSignIn();
 
         assertTrue(signInPage.hasSignInError(), "Should show error for empty password");

@@ -1,4 +1,4 @@
 package lt.techin;
 
-public class CalcTest {
+public class CalcTest extends BaseTest{
 }

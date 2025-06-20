@@ -21,13 +21,13 @@ public class RegistrationPage extends BasePage{
     @FindBy(xpath = "//button[normalize-space()='Sukurti']")
     private WebElement createAccount;
 
-    public void userNameInput(String input){
+    public void enterUserName(String input){
         userName.sendKeys(input);
     }
-    public void passwordInput(String input){
+    public void enterPassword(String input){
         password.sendKeys(input);
     }
-    public void passwordConfirmationInput(String input){
+    public void enterPasswordConfirmation(String input){
         passwordConfirmation.sendKeys(input);
     }
     public void clickCreateAccount(){
@@ -35,9 +35,9 @@ public class RegistrationPage extends BasePage{
     }
 
     public void performRegistration(String username, String pass, String confirmPass) {
-        userNameInput(username);
-        passwordInput(pass);
-        passwordConfirmationInput(confirmPass);
+        enterUserName(username);
+        enterPassword(pass);
+        enterPasswordConfirmation(confirmPass);
         clickCreateAccount();
     }
     public boolean isRegistrationSuccessful() {

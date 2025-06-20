@@ -27,10 +27,10 @@ public class SignInPage extends BasePage{
         createNewAccount.click();
     }
 
-    public void signInNameInput(String input){
+    public void enterSignInName(String input){
         signInName.sendKeys(input);
     }
-    public void signInPasswordInput(String input){
+    public void enterSignInPassword(String input){
         signInPassword.sendKeys(input);
     }
     public void clickSignIn(){
@@ -38,8 +38,8 @@ public class SignInPage extends BasePage{
     }
 
     public void performSignIn(String username, String password){
-        signInNameInput(username);
-        signInPasswordInput(password);
+        enterSignInName(username);
+        enterSignInPassword(password);
         clickSignIn();
     }
 
